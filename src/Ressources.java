@@ -2,14 +2,12 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 
 public class Ressources {
-    // Propriétés observables pour les ressources
     private static final IntegerProperty money = new SimpleIntegerProperty(100);
     private static final IntegerProperty tomatoSeeds = new SimpleIntegerProperty(0);
     private static final IntegerProperty wheetSeeds = new SimpleIntegerProperty(0);
     private static final IntegerProperty harvestedTomatoes = new SimpleIntegerProperty(0);
     private static final IntegerProperty harvestedWheat = new SimpleIntegerProperty(0);
 
-    // Getter et setter pour 'money'
     public static int getMoney() {
         return money.get();
     }
@@ -22,7 +20,6 @@ public class Ressources {
         return money;
     }
 
-    // Getter et setter pour 'tomatoSeeds'
     public static int getTomatoSeeds() {
         return tomatoSeeds.get();
     }
@@ -35,7 +32,6 @@ public class Ressources {
         return tomatoSeeds;
     }
 
-    // Getter et setter pour 'wheetSeeds'
     public static int getWheetSeeds() {
         return wheetSeeds.get();
     }
@@ -48,7 +44,6 @@ public class Ressources {
         return wheetSeeds;
     }
 
-    // Getter et setter pour tomates récoltées
     public static int getHarvestedTomatoes() {
         return harvestedTomatoes.get();
     }
@@ -61,7 +56,6 @@ public class Ressources {
         return harvestedTomatoes;
     }
 
-    // Getter et setter pour blé récolté
     public static int getHarvestedWheat() {
         return harvestedWheat.get();
     }
@@ -73,4 +67,60 @@ public class Ressources {
     public static IntegerProperty harvestedWheatProperty() {
         return harvestedWheat;
     }
+
+    private static final IntegerProperty chickens = new SimpleIntegerProperty(0);
+    private static final IntegerProperty eggs = new SimpleIntegerProperty(0);
+    private static final IntegerProperty cows = new SimpleIntegerProperty(0);
+    private static final IntegerProperty milk = new SimpleIntegerProperty(0);
+
+    public static int getChickens() {
+        return chickens.get();
+    }
+
+    public static void addChickens(int amount) {
+        chickens.set(chickens.get() + amount);
+    }
+
+    public static IntegerProperty chickensProperty() {
+        return chickens;
+    }
+
+    // Getters et setters pour eggs
+    public static int getEggs() {
+        return eggs.get();
+    }
+
+    public static void addEggs(int amount) {
+        eggs.set(eggs.get() + amount);
+    }
+
+    public static IntegerProperty eggsProperty() {
+        return eggs;
+    }
+
+    // Getters et setters pour cows
+    public static int getCows() {
+        return cows.get();
+    }
+
+    public static void addCows(int amount) {
+        cows.set(cows.get() + amount);
+    }
+
+    public static IntegerProperty cowsProperty() {
+        return cows;
+    }
+
+    public static int getMilk() {
+        return milk.get();
+    }
+
+    public static void addMilk(int amount) {
+        milk.set(milk.get() + amount);
+    }
+
+    public static IntegerProperty milkProperty() {
+        return milk;
+    }
+
 }

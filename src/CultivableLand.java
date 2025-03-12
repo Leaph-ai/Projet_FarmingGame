@@ -4,16 +4,14 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 
 public class CultivableLand {
-
     @FXML
     private GridPane gridPane;
 
     public void initialize() {
-        int rows = 20;
-        int columns = 29;
-
-        // Tableau de champs
+        int rows = 23;
+        int columns = 47;
         Plant[][] plants = new Plant[rows][columns];
+        Animal[][] animals = new Animal[rows][columns];
 
         for (int row = 0; row < rows; row++) {
             for (int col = 0; col < columns; col++) {
@@ -27,31 +25,55 @@ public class CultivableLand {
                 final int finalRow = row;
                 final int finalCol = col;
 
-                // Action sur clic de champ
                 button.setOnMouseClicked((event) -> {
+                    String selection = SelectionManager.getCurrentSelection();
                     Plant plant = plants[finalRow][finalCol];
 
-                    // Vérifie l'état pour chaque action en fonction
-                    if (!plant.isPlantingInProgress() && !plant.isReadyToCollect()) {
-                        // Si le champ est vide, planter
-                        if (Ressources.getTomatoSeeds() > 0) {
-                            Ressources.addTomatoSeeds(-1);
-                            plant.plant("tomato");
-                        } else if (Ressources.getWheetSeeds() > 0) {
-                            Ressources.addWheetSeeds(-1);
-                            plant.plant("wheat");
-                        } else {
-                            System.out.println("Pas assez de graines !");
-                        }
-                    } else if (plant.isReadyToCollect()) {
-                        // Sauvegarder le type de plante avant la collecte
-                        String plantType = plant.getPlantType();
-                        // Récolter la plante
+                    if (plant.isReadyToCollect()) {
                         plant.collect();
-                        // Utiliser le type sauvegardé pour l'affichage
-                        System.out.println("Vous avez récolté : " + (plantType.equals("tomato") ? "🍅 Tomates" : "🌾 Blé") + " !");
-                    } else {
-                        System.out.println("Cette plante est encore en train de pousser !");
+                        return;
+                    }
+
+                    if (selection == null) {
+                        System.out.println("Veuillez d'abord sélectionner un élément à placer !");
+                        return;
+                    }
+
+
+                    switch (selection) {
+                        case "tomato":
+                            if (Ressources.getTomatoSeeds() > 0) {
+                                Ressources.addTomatoSeeds(-1);
+                                plants[finalRow][finalCol].plant("tomato");
+                            } else {
+                                System.out.println("Pas assez de graines de tomates !");
+                            }
+                            break;
+
+                        case "wheat":
+                            if (Ressources.getWheetSeeds() > 0) {
+                                Ressources.addWheetSeeds(-1);
+                                plants[finalRow][finalCol].plant("wheat");
+                            } else {
+                                System.out.println("Pas assez de graines de blé !");
+                            }
+                            break;
+
+                        case "chicken":
+                            if (Ressources.getMoney() >= 50 && animals[finalRow][finalCol] == null) {
+                                Ressources.setMoney(Ressources.getMoney() - 50);
+                                animals[finalRow][finalCol] = new Animal("chicken");
+                                button.setText("🐔");
+                            }
+                            break;
+
+                        case "cow":
+                            if (Ressources.getMoney() >= 100 && animals[finalRow][finalCol] == null) {
+                                Ressources.setMoney(Ressources.getMoney() - 100);
+                                animals[finalRow][finalCol] = new Animal("cow");
+                                button.setText("🐄");
+                            }
+                            break;
                     }
                 });
 

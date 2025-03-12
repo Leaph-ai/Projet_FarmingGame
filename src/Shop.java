@@ -5,6 +5,20 @@ import javafx.scene.control.Label;
 public class Shop {
 
     @FXML
+    private Button buyChicken;
+    @FXML
+    private Button sellChicken;
+    @FXML
+    private Button buyCow;
+    @FXML
+    private Button sellCow;
+    @FXML
+    private Button sellEgg;
+    @FXML
+    private Button sellMilk;
+
+
+    @FXML
     private Button buyTomato;
 
     @FXML
@@ -25,13 +39,21 @@ public class Shop {
     @FXML
     private Label labelWheetSeeds;
 
+    @FXML
+    private Label labelEggs;
+
+    @FXML
+    private Label labelMilk;
+
+
     public void initialize() {
-        // Lier les labels aux propriétés de Ressources
         labelMoney.textProperty().bind(Ressources.moneyProperty().asString("Monnaie : %d"));
         labelTomatoSeeds.textProperty().bind(Ressources.tomatoSeedsProperty().asString("Graines : %d"));
         labelWheetSeeds.textProperty().bind(Ressources.wheetSeedsProperty().asString("Graines : %d"));
+        labelEggs.textProperty().bind(Ressources.eggsProperty().asString("Œufs : %d"));
+        labelMilk.textProperty().bind(Ressources.milkProperty().asString("Lait : %d"));
 
-        // Bouton pour acheter des graines de tomates
+
         buyTomato.setOnAction(event -> {
             if (Ressources.getMoney() >= 10) {
                 Ressources.setMoney(Ressources.getMoney() - 10);
@@ -41,7 +63,6 @@ public class Shop {
             }
         });
 
-        // Bouton pour acheter des graines de blé
         buyWheet.setOnAction(event -> {
             if (Ressources.getMoney() >= 15) {
                 Ressources.setMoney(Ressources.getMoney() - 15);
@@ -67,6 +88,63 @@ public class Shop {
             } else {
                 System.out.println("Pas de blé récolté à vendre !");
             }
+
+
+        });
+
+        buyChicken.setOnAction(event -> {
+            if (Ressources.getMoney() >= 50) {
+                Ressources.setMoney(Ressources.getMoney() - 50);
+                Ressources.addChickens(1);
+            } else {
+                System.out.println("Pas assez d'argent pour acheter un poulet !");
+            }
+        });
+
+        sellChicken.setOnAction(event -> {
+            if (Ressources.getChickens() > 0) {
+                Ressources.addChickens(-1);
+                Ressources.setMoney(Ressources.getMoney() + 40);
+            } else {
+                System.out.println("Pas de poulet à vendre !");
+            }
+        });
+
+        buyCow.setOnAction(event -> {
+            if (Ressources.getMoney() >= 100) {
+                Ressources.setMoney(Ressources.getMoney() - 100);
+                Ressources.addCows(1);
+            } else {
+                System.out.println("Pas assez d'argent pour acheter une vache !");
+            }
+        });
+
+        sellCow.setOnAction(event -> {
+            if (Ressources.getCows() > 0) {
+                Ressources.addCows(-1);
+                Ressources.setMoney(Ressources.getMoney() + 80);
+            } else {
+                System.out.println("Pas de vache à vendre !");
+            }
+        });
+
+        sellEgg.setOnAction(event -> {
+            if (Ressources.getEggs() > 0) {
+                Ressources.addEggs(-1);
+                Ressources.setMoney(Ressources.getMoney() + 5);
+            } else {
+                System.out.println("Pas d'œufs à vendre !");
+            }
+        });
+
+        sellMilk.setOnAction(event -> {
+            if (Ressources.getMilk() > 0) {
+                Ressources.addMilk(-1);
+                Ressources.setMoney(Ressources.getMoney() + 10);
+            } else {
+                System.out.println("Pas de lait à vendre !");
+            }
+
         });
     }
 }
