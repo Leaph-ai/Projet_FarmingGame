@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:controller="MenuController"
+      xmlns:fx="http://javafx.com/fxml/1"
+      prefHeight="150.0"
+      prefWidth="1920.0">
+    <children>
+        <Label fx:id="labelMoney" layoutX="825.0" layoutY="1.0" prefHeight="25.0" prefWidth="150.0" text="Monnaie : " />
+        <ImageView fitHeight="55.0" fitWidth="60.0" layoutX="900.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assets/images/pixel_farmer_transparent.png" />
+            </image>
+        </ImageView>
+        <Label fx:id="labelAnimals" layoutX="825.0" layoutY="50.0" prefHeight="25.0" prefWidth="150.0" text="Animaux :" />
+        <Label  fx:id="labelPlants" layoutX="825.0" layoutY="25.0" prefHeight="25.0" prefWidth="150.0" text="Champs :" />
+        <ImageView fitHeight="28.0" fitWidth="25.0" layoutX="5.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assets/images/tomato_lvl4.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="28.0" fitWidth="25.0" layoutX="205.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assets/images/potato_lvl4.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="58.0" fitWidth="25.0" layoutX="5.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assets/images/wheat_lvl4.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="28.0" fitWidth="25.0" layoutX="405.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assets/images/cow_transparent.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="28.0" fitWidth="25.0" layoutX="405.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assets/images/chicken_transparent.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="28.0" fitWidth="25.0" layoutX="605.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assets/images/chicken_transparent.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="28.0" fitWidth="25.0" layoutX="605.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assets/images/chicken_transparent.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="28.0" fitWidth="25.0" layoutX="205.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assets/images/corn_lvl4.png" />
+            </image>
+        </ImageView>
+        <Label fx:id="labelTomato" layoutX="40.0" layoutY="5.0" prefHeight="25.0" prefWidth="60.0" text="x 0">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label fx:id="labelTomatoSeeds" layoutX="120.0" layoutY="5.0" prefHeight="25.0" prefWidth="60.0" text="Graines :">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label fx:id="labelWheet" layoutX="40.0" layoutY="40.0" prefHeight="25.0" prefWidth="60.0" text="x 0">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label fx:id="labelWheetSeeds" layoutX="120.0" layoutY="40.0" prefHeight="25.0" prefWidth="60.0" text="Graines :">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label  layoutX="235.0" layoutY="5.0" prefHeight="25.0" prefWidth="60.0" text="x 0">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="235.0" layoutY="40.0" prefHeight="25.0" prefWidth="60.0" text="x 0">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="315.0" layoutY="5.0" prefHeight="25.0" prefWidth="60.0" text="Graines :">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="315.0" layoutY="40.0" prefHeight="25.0" prefWidth="60.0" text="Graines :">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="435.0" layoutY="5.0" prefHeight="25.0" prefWidth="60.0" text="x 0">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="435.0" layoutY="40.0" prefHeight="25.0" prefWidth="60.0" text="x 0">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="515.0" layoutY="5.0" prefHeight="25.0" prefWidth="120.0" text="Oeufs :">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="515.0" layoutY="40.0" prefHeight="25.0" prefWidth="60.0" text="Lait :">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="635.0" layoutY="6.0" prefHeight="25.0" prefWidth="60.0" text="x 0">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="635.0" layoutY="40.0" prefHeight="25.0" prefWidth="60.0" text="x 0">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="715.0" layoutY="6.0" prefHeight="25.0" prefWidth="60.0" text="Graines :">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label layoutX="715.0" layoutY="40.0" prefHeight="25.0" prefWidth="60.0" text="Graines :">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+    </children>
+</Pane>

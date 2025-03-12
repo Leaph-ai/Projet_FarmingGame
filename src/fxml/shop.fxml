@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+
+<AnchorPane fx:controller="Shop" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" xmlns:fx="http://javafx.com/fxml/1">
+        <children>
+            <Label fx:id="labelMoney" layoutX="50.0" layoutY="20.0" text="Monnaie : 100" />
+
+            <Button fx:id="buyTomato" layoutX="360.0" layoutY="89.0" mnemonicParsing="false" text="Acheter" />
+            <Label fx:id="labelTomatoSeeds" layoutX="360.0" layoutY="60.0" text="Graines : 0" />
+            <Button fx:id="sellTomato" layoutX="360.0" layoutY="163.0" mnemonicParsing="false" text="Vendre" />
+            <Label fx:id="labelWheetSeeds" layoutX="349.0" layoutY="280.0" text="Graines : 0" />
+
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="118.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@../assets/images/tomato_lvl4.png" />
+                </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="118.0" layoutY="295.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@../assets/images/wheat_lvl4.png" />
+                </image>
+            </ImageView>
+            <Button fx:id="buyWheet" layoutX="349.0" layoutY="311.0" mnemonicParsing="false" text="Acheter" />
+            <Button fx:id="sellWheet" layoutX="350.0" layoutY="388.0" mnemonicParsing="false" text="Vendre" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="540.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@../assets/images/chicken_transparent.png" />
+                </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="540.0" layoutY="295.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@../assets/images/cow_transparent.png" />
+                </image>
+            </ImageView>
+            <Button fx:id="buyChicken" layoutX="742.0" layoutY="89.0" mnemonicParsing="false" text="Acheter" />
+            <Button fx:id="sellChicken" layoutX="743.0" layoutY="157.0" mnemonicParsing="false" text="Vendre" />
+            <Button fx:id="buyCow" layoutX="742.0" layoutY="311.0" mnemonicParsing="false" text="Acheter" />
+            <Button fx:id="sellCow" layoutX="743.0" layoutY="376.0" mnemonicParsing="false" text="Vendre" />
+        </children></AnchorPane>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane fx:controller="CultivableLand" fx:id="gridPane" prefHeight="500" prefWidth="540" xmlns:fx="http://javafx.com/fxml/1">
+</GridPane>
